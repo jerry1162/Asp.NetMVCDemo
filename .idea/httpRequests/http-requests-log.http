@@ -1,0 +1,36 @@
+﻿GET http://localhost:58941/Home/Test?Value=1
+
+<> 2019-10-21T030039.200.html
+
+###
+
+GET http://localhost:58941/Home/Test
+
+<> 2019-10-21T030023.200.html
+
+###
+
+GET http://localhost:58941/Home/Test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-10-21T025949.200.html
+
+###
+
+GET http://localhost:58941/Home/Test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-10-21T025940.200.html
+
+###
+
+GET http://localhost:8080/Home/Test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-10-21T025909.400.html
+
+###
+
