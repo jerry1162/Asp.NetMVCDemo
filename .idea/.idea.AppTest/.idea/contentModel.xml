@@ -7,64 +7,25 @@
     <e p="C:\Users\linli\.Rider2019.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\linli\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_AppTest.-578328389.00" t="ExcludeRecursive" />
     <e p="C:\Users\linli\Desktop\Test 2019 9 10\AppTest" t="IncludeFlat">
-      <e p="AppTest" t="IncludeRecursive">
+      <e p="ApiFramework" t="IncludeRecursive">
+        <e p="ApiFramework.csproj" t="IncludeRecursive" />
         <e p="App_Data" t="Include" />
         <e p="App_Start" t="Include">
           <e p="BundleConfig.cs" t="Include" />
           <e p="FilterConfig.cs" t="Include" />
           <e p="RouteConfig.cs" t="Include" />
+          <e p="WebApiConfig.cs" t="Include" />
         </e>
-        <e p="AppTest.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Common" t="Include">
-          <e p="Constants" t="Include">
-            <e p="HttpMethod.cs" t="Include" />
-          </e>
-        </e>
         <e p="Content" t="Include">
-          <e p="bootstrap-theme.css" t="Include" />
-          <e p="bootstrap-theme.css.map" t="Include" />
-          <e p="bootstrap-theme.min.css" t="Include" />
-          <e p="bootstrap-theme.min.css.map" t="Include" />
-          <e p="bootstrap.css" t="Include" />
-          <e p="bootstrap.css.map" t="Include" />
-          <e p="bootstrap.min.css" t="Include" />
-          <e p="bootstrap.min.css.map" t="Include" />
           <e p="Site.css" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
-        </e>
-        <e p="favicon.ico" t="Include" />
-        <e p="Filters" t="Include">
-          <e p="ArgFilterAttribute.cs" t="Include" />
-        </e>
-        <e p="fonts" t="Include">
-          <e p="glyphicons-halflings-regular.eot" t="Include" />
-          <e p="glyphicons-halflings-regular.svg" t="Include" />
-          <e p="glyphicons-halflings-regular.ttf" t="Include" />
-          <e p="glyphicons-halflings-regular.woff" t="Include" />
-          <e p="glyphicons-halflings-regular.woff2" t="Include" />
-        </e>
-        <e p="Framework" t="Include">
-          <e p="Model" t="Include">
-            <e p="BaseModel.cs" t="Include" />
-            <e p="UserModel.cs" t="Include" />
-          </e>
-          <e p="Repository" t="Include">
-            <e p="IRepository.cs" t="Include" />
-            <e p="UserRepository.cs" t="Include" />
-          </e>
-          <e p="Service" t="Include">
-            <e p="UserService.cs" t="Include" />
-          </e>
+          <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Global.asax" t="Include" />
         <e p="Global.asax.cs" t="Include" />
-        <e p="IIS" t="Include">
-          <e p="IISInfo.cs" t="Include" />
-          <e p="IISWorker.cs" t="Include" />
-        </e>
         <e p="Models" t="Include">
           <e p="TestModel.cs" t="Include" />
         </e>
@@ -73,75 +34,51 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="Result" t="Include">
-          <e p="CodeMsg.cs" t="Include" />
-          <e p="Result.cs" t="Include" />
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="bootstrap.js" t="Include" />
-          <e p="bootstrap.min.js" t="Include" />
-          <e p="jquery-3.3.1.intellisense.js" t="Include" />
-          <e p="jquery-3.3.1.js" t="Include" />
-          <e p="jquery-3.3.1.min.js" t="Include" />
-          <e p="jquery-3.3.1.min.map" t="Include" />
-          <e p="jquery-3.3.1.slim.js" t="Include" />
-          <e p="jquery-3.3.1.slim.min.js" t="Include" />
-          <e p="jquery-3.3.1.slim.min.map" t="Include" />
-          <e p="jquery.validate-vsdoc.js" t="Include" />
-          <e p="jquery.validate.js" t="Include" />
-          <e p="jquery.validate.min.js" t="Include" />
-          <e p="jquery.validate.unobtrusive.js" t="Include" />
-          <e p="jquery.validate.unobtrusive.min.js" t="Include" />
-          <e p="modernizr-2.8.3.js" t="Include" />
-        </e>
-        <e p="Utils" t="Include">
-          <e p="JsonUtil.cs" t="Include" />
-        </e>
-        <e p="Views" t="Include">
-          <e p="_ViewStart.cshtml" t="Include" />
-          <e p="Home" t="Include">
-            <e p="About.cshtml" t="Include" />
-            <e p="Contact.cshtml" t="Include" />
-            <e p="Index.cshtml" t="Include" />
-            <e p="Test.cshtml" t="Include" />
-          </e>
-          <e p="Shared" t="Include">
-            <e p="_Layout.cshtml" t="Include" />
-            <e p="Error.cshtml" t="Include" />
-          </e>
-          <e p="Web.config" t="Include" />
-        </e>
+        <e p="Scripts" t="Include" />
         <e p="Web.config" t="Include" />
         <e p="Web.Debug.config" t="Include" />
         <e p="Web.Release.config" t="Include" />
       </e>
       <e p="AppTest.sln" t="IncludeFlat" />
-      <e p="AppTest.Tests" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="AppTest.Tests.csproj" t="IncludeRecursive" />
+      <e p="Framework" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Controllers" t="Include">
-          <e p="HomeControllerTest.cs" t="Include" />
+        <e p="Common" t="Include">
+          <e p="Constants" t="Include">
+            <e p="HttpMethod.cs" t="Include" />
+          </e>
         </e>
-        <e p="IIS" t="Include">
-          <e p="IISTest.cs" t="Include" />
+        <e p="Exception" t="Include">
+          <e p="Error.cs" t="Include" />
         </e>
+        <e p="Filters" t="Include">
+          <e p="MVC" t="Include">
+            <e p="ArgFilterAttribute.cs" t="Include" />
+            <e p="GlobalExceptionAttribute.cs" t="Include" />
+          </e>
+          <e p="WebApi" t="Include">
+            <e p="ArgFilterAttribute.cs" t="Include" />
+            <e p="GlobalExceptionAttribute.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Framework.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-      </e>
-      <e p="packages" t="ExcludeRecursive">
-        <e p="MSTest.TestAdapter.1.2.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
-        <e p="MSTest.TestAdapter.1.2.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
-        <e p="MSTest.TestAdapter.1.2.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
-        <e p="MSTest.TestAdapter.1.2.0\build\_common\zh-Hans" t="Include">
-          <e p="Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll" t="Include" />
-          <e p="Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll" t="Include" />
-          <e p="Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll" t="Include" />
+        <e p="Result" t="Include">
+          <e p="Builder.cs" t="Include" />
+          <e p="CodeMsg.cs" t="Include" />
+          <e p="Result.cs" t="Include" />
+        </e>
+        <e p="Utils" t="Include">
+          <e p="JsonUtil.cs" t="Include" />
+        </e>
+        <e p="Validator" t="Include">
+          <e p="ValidArgAttribute.cs" t="Include" />
         </e>
       </e>
+      <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
