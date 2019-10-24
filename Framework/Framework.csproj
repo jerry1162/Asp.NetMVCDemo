@@ -80,8 +80,15 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Common\Constants\HttpMethod.cs" />
+        <Compile Include="Authorization\ITokenVerifier.cs" />
+        <Compile Include="Authorization\IUser.cs" />
+        <Compile Include="Authorization\TokenVerifier.cs" />
+        <Compile Include="Common\Constants.cs" />
+        <Compile Include="Controllers\IController.cs" />
+        <Compile Include="Controllers\Mvc\BaseController.cs" />
+        <Compile Include="Controllers\WebApi\BaseController.cs" />
         <Compile Include="Exception\Error.cs" />
+        <Compile Include="Filters\AuthFilterAttribute.cs" />
         <Compile Include="Filters\Mvc\ArgFilterAttribute.cs" />
         <Compile Include="Filters\Mvc\GlobalExceptionAttribute.cs" />
         <Compile Include="Filters\WebApi\ArgFilterAttribute.cs" />

@@ -59,5 +59,20 @@ namespace Framework.Result
 		{
 			return new CodeMsg(100, "参数错误：{0}");
 		}
+		
+		public static CodeMsg TokenRequired()
+		{
+			return new CodeMsg(200, "用户凭证信息丢失");
+		}
+		
+		public static CodeMsg InvalidVerifier()
+		{
+			return new CodeMsg(201, "指定了无效的验证器");
+		}
+		
+		public static CodeMsg InvalidToken()
+		{
+			return new CodeMsg(202, "无效的用户凭证");
+		}
 	}
 }

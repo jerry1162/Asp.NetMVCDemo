@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Framework.Common.Constants;
+using Framework.Common;
 using Framework.Exception;
 using Framework.Result;
 
@@ -24,7 +24,7 @@ namespace Framework.Filters.Mvc
 			}
 
 			var method = filterContext.HttpContext.Request.HttpMethod;
-			if (HttpMethod.GET.Equals(method))
+			if (Constants.HttpMethod.GET.Equals(method))
 			{
 				filterContext.Result = codeMsg.BuildContentResult();
 			}

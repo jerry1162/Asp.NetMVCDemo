@@ -5,12 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ApiFramework.Models;
+using Framework.Authorization;
+using Framework.Filters;
 using Framework.Filters.WebApi;
 using Framework.Validator;
 
 namespace ApiFramework.Controllers
 {
-	//[ArgFilter]
+	[AuthFilter(Verifier = typeof(TokenVerifier))]
 	public class ValuesController : ApiController
 	{
 		// GET api/values

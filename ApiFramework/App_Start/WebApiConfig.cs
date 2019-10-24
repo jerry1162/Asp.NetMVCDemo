@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Filters;
+using Framework.Filters;
 using Framework.Filters.WebApi;
 
 namespace ApiFramework
@@ -16,6 +18,7 @@ namespace ApiFramework
 			config.MapHttpAttributeRoutes();
 			
 			config.Filters.Add(new GlobalExceptionAttribute());
+			//config.Filters.Add(new AuthFilterAttribute());
 			config.Filters.Add(new ArgFilterAttribute());
 
 			config.Routes.MapHttpRoute(
