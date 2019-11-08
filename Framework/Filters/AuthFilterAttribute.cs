@@ -15,9 +15,39 @@ namespace Framework.Filters
 {
 	public class AuthFilterAttribute : AuthorizationFilterAttribute
 	{
-		public Type Verifier { get; set; }
-		
-		private ITokenVerifier TokenVerifier { get; set; }
+		public Type VerifierType
+		{
+			get;
+			set;
+			/*
+			{
+
+			}
+			*/
+		}
+
+		private ITokenVerifier _tokenVerifier;
+
+		private ITokenVerifier TokenVerifier
+		{
+			get
+			{
+				if (_tokenVerifier != null) return _tokenVerifier;
+				//验证器不存在则读取验证器
+				if (!typeof(ITokenVerifier).IsAssignableFrom(VerifierType))
+				{
+					throw CodeMsg.InvalidVerifier().BuildError();
+				}
+
+				var verifier = VerifierType.GetConstructor(Type.EmptyTypes)?.Invoke(null);
+				if (!(verifier is ITokenVerifier tokenVerifier))
+					throw CodeMsg.InvalidVerifier().BuildError();
+
+				_tokenVerifier = verifier as ITokenVerifier;
+
+				return _tokenVerifier;
+			}
+		}
 
 		public override void OnAuthorization(HttpActionContext actionContext)
 		{
@@ -31,23 +61,9 @@ namespace Framework.Filters
 			{
 				return;
 			}
-			
-			var token = GetToken(actionContext);
-			
-			//识别器不存在则读取识别器
-			if (TokenVerifier == null) ;
-			{
-				if (!typeof(ITokenVerifier).IsAssignableFrom(Verifier))
-				{
-					throw CodeMsg.InvalidVerifier().BuildError();
-				}
 
-				var verifier = Verifier.GetConstructor(Type.EmptyTypes)?.Invoke(null);
-				if (!(verifier is ITokenVerifier tokenVerifier))
-					throw CodeMsg.InvalidVerifier().BuildError();
-				
-				TokenVerifier = verifier as ITokenVerifier;
-			}
+			var token = GetToken(actionContext);
+
 			if (TokenVerifier.Verify(token) == null)
 			{
 				throw CodeMsg.InvalidToken().BuildError();
@@ -63,7 +79,7 @@ namespace Framework.Filters
 		private static string GetToken(HttpActionContext actionContext)
 		{
 			var token = TryGetToken(actionContext);
-			if (token == null)
+			if (string.IsNullOrEmpty(token))
 			{
 				throw CodeMsg.TokenRequired().BuildError();
 			}
@@ -78,21 +94,42 @@ namespace Framework.Filters
 		/// <returns></returns>
 		private static string TryGetToken(HttpActionContext actionContext)
 		{
-			//TODO 暂未做从Cookie中获取
-			//先从Authorization字段中读取Token，读不到再从请求参数中读取
+			//先从Cookie中读取Token，然后从Authorization字段中读取Token，读不到再从请求参数中读取
+			var token = GetTokenFromCookie(actionContext);
+			if (!string.IsNullOrEmpty(token))
+			{
+				return token;
+			}
 			return actionContext.Request.Headers.Authorization?.Parameter ?? GetTokenForGetOrPost(actionContext);
 		}
 
+		private static string GetTokenFromCookie(HttpActionContext actionContext)
+		{
+			var collection = actionContext.Request.Headers.GetCookies(Constants.Keys.TOKEN);
+			var value = "";
+			if (collection.Count > 0)
+			{
+				value = collection[0][Constants.Keys.TOKEN].Value;
+			}
+
+			return value;
+		}
+
+		/// <summary>
+		/// 从请求参数中获取Token信息
+		/// </summary>
+		/// <param name="actionContext"></param>
+		/// <returns></returns>
 		private static string GetTokenForGetOrPost(HttpActionContext actionContext)
 		{
 			if (HttpMethod.GET.Equals(actionContext.Request.Method.Method))
 			{
 				var queryString = actionContext.Request.RequestUri.ParseQueryString();
-				return queryString[Constants.Token.NAME];
+				return queryString[Constants.Keys.TOKEN];
 			}
 			else
 			{
-				return HttpContext.Current.Request.Form[Constants.Token.NAME];
+				return HttpContext.Current.Request.Form[Constants.Keys.TOKEN];
 			}
 		}
 	}

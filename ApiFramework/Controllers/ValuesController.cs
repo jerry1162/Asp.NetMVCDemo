@@ -12,7 +12,7 @@ using Framework.Validator;
 
 namespace ApiFramework.Controllers
 {
-	[AuthFilter(Verifier = typeof(TokenVerifier))]
+	[AuthFilter(VerifierType = typeof(TokenVerifier))]
 	public class ValuesController : ApiController
 	{
 		// GET api/values

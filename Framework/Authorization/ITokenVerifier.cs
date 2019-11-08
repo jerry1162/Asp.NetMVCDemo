@@ -5,6 +5,6 @@
 	/// </summary>
 	public interface ITokenVerifier
 	{
-		IUser Verify(string token);
+		UserBase Verify(string token);
 	}
 }

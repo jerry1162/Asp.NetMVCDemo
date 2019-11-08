@@ -2,9 +2,9 @@
 
 namespace Framework.Authorization
 {
-	public class TokenVerifier: ITokenVerifier
+	public class TokenVerifier : ITokenVerifier
 	{
-		public IUser Verify(string token)
+		public UserBase Verify(string token)
 		{
 			Console.WriteLine($"token:{token} ok");
 			return null;

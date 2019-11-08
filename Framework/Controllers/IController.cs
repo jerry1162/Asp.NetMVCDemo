@@ -4,6 +4,6 @@ namespace Framework.Controllers
 {
 	public interface IController
 	{
-		IUser CurUser { get; set; }
+		UserBase CurUser { get; set; }
 	}
 }

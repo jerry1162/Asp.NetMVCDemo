@@ -81,8 +81,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Authorization\ITokenVerifier.cs" />
-        <Compile Include="Authorization\IUser.cs" />
         <Compile Include="Authorization\TokenVerifier.cs" />
+        <Compile Include="Authorization\UserBase.cs" />
         <Compile Include="Common\Constants.cs" />
         <Compile Include="Controllers\IController.cs" />
         <Compile Include="Controllers\Mvc\BaseController.cs" />

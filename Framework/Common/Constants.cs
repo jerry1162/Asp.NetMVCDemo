@@ -8,9 +8,9 @@
 			public const string POST = "POST";
 		}
 		
-		public static class Token
+		public static class Keys
 		{
-			public const string NAME = "token";
+			public const string TOKEN = "token";
 		}
 	}
 }

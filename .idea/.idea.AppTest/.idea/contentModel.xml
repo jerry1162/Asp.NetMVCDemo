@@ -43,8 +43,8 @@
       <e p="Framework" t="IncludeRecursive">
         <e p="Authorization" t="Include">
           <e p="ITokenVerifier.cs" t="Include" />
-          <e p="IUser.cs" t="Include" />
           <e p="TokenVerifier.cs" t="Include" />
+          <e p="UserBase.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Common" t="Include">
